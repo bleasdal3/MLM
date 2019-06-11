@@ -13,7 +13,9 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        //
+        "App\Console\Commands\ImportFromInbox",
+        "App\Console\Commands\ExportToSalesforce", 
+        "App\ManualZooplaTest"     
     ];
 
     /**
@@ -24,8 +26,8 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        // $schedule->command('inspire')
-        //          ->hourly();
+        $schedule->command('import:inbox')->everyFiveMinutes();
+        $schedule->command('export:salesforce')->everyMinute();
     }
 
     /**
@@ -35,8 +37,7 @@ class Kernel extends ConsoleKernel
      */
     protected function commands()
     {
-        $this->load(__DIR__.'/Commands');
-
+        $this->load(__DIR__.'/Commands'); //superfluous?
         require base_path('routes/console.php');
     }
 }

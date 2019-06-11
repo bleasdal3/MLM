@@ -14,3 +14,17 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::get('/', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@home');
+Route::get('/leads/pending', 'LeadController@index');
+
+
+Route::get('/import/rightmove', 'HomeController@rightmoveImport');
+Route::get('/import/kyero', 'HomeController@kyeroImport');
+Route::get('/import/a-place-in-the-sun', 'HomeController@aPlaceInTheSunImport');
+
+Route::get('/import/test', 'HomeController@testImport');
+
+Route::get('/export/pending', 'HomeController@export');

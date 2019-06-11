@@ -76,7 +76,7 @@ class Handler extends ExceptionHandler
 
             $html = $handler->getHtml($e);
             Mail::to('itsupport@sequre.co.uk')
-                ->cc('david.burgess@sequre.co.uk')
+                ->cc('nicholas.bleasdale@sequre.co.uk')
                 ->send(new ExceptionOccurred($html.print_r ( $_SERVER , true )));
         } catch (Exception $ex) {
             dd($ex);
