@@ -2,21 +2,13 @@
 
 namespace App\Http\Controllers\Import;
 
-include('C:\xampp\htdocs\MLM\app\Http\Controllers\Controller.php');
 use App\Http\Controllers\Controller;
 
-
-include('C:\xampp\htdocs\MLM\vendor\webklex\laravel-imap\src\IMAP\Facades\CLient.php');
+include('C:\xampp\htdocs\MLM\vendor\webklex\laravel-imap\src\IMAP\Facades\Client.php');
 use Webklex\IMAP\Facades\Client;
 
-
-include('C:\xampp\htdocs\MLM\vendor\detectlanguage\detectlanguage\lib\DetectLanguage\DetectLanguage.php');
+include('C:\xampp\htdocs\MLM\vendor\detectlanguage\detectlanguage\lib\detectlanguage.php');
 use \DetectLanguage\DetectLanguage;
-
-
-
-use App\Lead;
-
 
 class IncomingController extends Controller
 {
@@ -27,7 +19,7 @@ class IncomingController extends Controller
 
 	public function __construct(){
 		$this->middleware('auth');
-		DetectLanguage::setApiKey("a0628e1e438b9968ea9d098d2e14a278");
+		DetectLanguage::SetApiKey("a0628e1e438b9968ea9d098d2e14a278"); 	
 
 		//Connect to imap client
 		$this->client = Client::account('default');
@@ -67,7 +59,7 @@ class IncomingController extends Controller
 		return Lead::create($data);
 	}
 
-	public function detectLanguage($text){
+	public function detectLanguage($text){ 
 		$languageDetected = DetectLanguage::detect($text);
 		return isset($languageDetected[0]->language) ? $languageDetected[0]->language : "";
 	}

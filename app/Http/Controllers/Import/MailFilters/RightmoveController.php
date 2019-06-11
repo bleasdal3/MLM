@@ -2,10 +2,6 @@
 
 namespace App\Http\Controllers\Import\MailFilters;
 
-include('C:\xampp\htdocs\MLM\app\Http\Controllers\HTMLController.php');
-include('C:\xampp\htdocs\MLM\app\Http\Controllers\Import\IncomingController.php');
-include('C:\xampp\htdocs\MLM\app\Http\Controllers\RightmoveEmailParser');
-
 use App\Http\Controllers\Import\IncomingController;
 use App\Http\Controllers\HTMLController;
 use App\Http\Controllers\RightmoveEmailParser;

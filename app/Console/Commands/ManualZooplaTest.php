@@ -4,6 +4,10 @@
 
 namespace App\Console\Commands;
 
+//use autoload for CLI entry ##################################
+
+include_once('C:\xampp\htdocs\MLM\bootstrap\autoload.php');
+
 use Illuminate\Console\Command;
 use App\Http\Controllers\Import\MailFilters\RightmoveController;
 

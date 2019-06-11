@@ -2,12 +2,8 @@
 
 namespace App\Http\Controllers\Import\MailFilters;
 
-
-include('C:\xampp\htdocs\MLM\app\Http\Controllers\Import\IncomingController.php');
 use App\Http\Controllers\Import\IncomingController;
 
-
-include('C:\xampp\htdocs\MLM\app\Http\Controllers\HTMLController.php');
 use App\Http\Controllers\HTMLController;
 
 
